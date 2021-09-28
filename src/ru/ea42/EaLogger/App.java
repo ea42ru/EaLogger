@@ -10,6 +10,7 @@ import java.util.Date;
 
 public class App {
     // глобальные переменные
+    public static String AppVersion = "(c) EaLogger Евтюшкин А.В. v 1.01 [14.10.2020]";
     public static int Httpport;
     public static String DBHost;
     public static String DBPort;

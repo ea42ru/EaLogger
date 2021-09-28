@@ -4,16 +4,12 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.sun.net.httpserver.HttpExchange;
 
-import java.io.ByteArrayOutputStream;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.sql.Timestamp;
 import java.util.Map;
 
 public class HandlerApi01 extends HttpHandlerBased {
     protected String doGet(HttpExchange exchange, Map params) {
-        return getHelp(null);
+        return App.QuMan.getHelp();
     }
 
     // =============================================
@@ -72,32 +68,5 @@ public class HandlerApi01 extends HttpHandlerBased {
         }
         qu.release();
         return postOk(jsRoot);
-    }
-
-    // получить help
-    private String getHelp(JsonObject jsRoot) {
-        InputStream jsFS;
-        String jsStr = "";
-        try {
-            jsFS = this.getClass().getClassLoader().getResourceAsStream("аpi.txt");
-            if (jsFS == null)
-                jsFS = new FileInputStream("аpi.txt");
-
-            if (jsFS != null) {
-                int ch;
-                ByteArrayOutputStream sb = new ByteArrayOutputStream();
-                while ((ch = jsFS.read()) != -1)
-                    sb.write(ch);
-                jsStr = sb.toString("UTF8");
-                jsFS.close();
-            }
-        } catch (IOException e) {
-        }
-
-        if (jsStr == "") jsStr = "Ok! EaLogger v1.01";
-        JsonObject jsResp = new JsonObject();
-        jsResp.addProperty("Type", "Help");
-        jsResp.addProperty("Val", jsStr);
-        return jsResp.toString();
     }
 }
