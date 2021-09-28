@@ -1,0 +1,11 @@
+{
+  "Debug": true,
+  "Port": 7777,
+  "DB": {
+    "Host": "sed.gosniip.ru",
+    "Port": "5432",
+    "User": "sed",
+    "Password": "sed",
+    "DB": "sed1"
+  }
+}
