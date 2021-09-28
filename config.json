@@ -1,0 +1,11 @@
+{
+  "Debug": true,
+  "Port": 7878,
+  "DB": {
+    "Host": "EaLogger.local.ru",
+    "Port": "5432",
+    "User": "EaLogger",
+    "Password": "EaLogger",
+    "DB": "EaLogger"
+  }
+}
