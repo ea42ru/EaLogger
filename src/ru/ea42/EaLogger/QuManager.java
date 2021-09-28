@@ -1,16 +1,6 @@
 package ru.ea42.EaLogger;
 
-import com.google.gson.JsonObject;
-
-import java.io.ByteArrayOutputStream;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class QuManager {
     public boolean testFail() {
@@ -48,32 +38,5 @@ public class QuManager {
         Qu Qu = new Qu();
         Qu.setText("");
         return Qu;
-    }
-
-    // получить help
-    public String getHelp() {
-        InputStream jsFS;
-        String jsStr = "";
-        try {
-            jsFS = this.getClass().getClassLoader().getResourceAsStream("аpi.txt");
-            if (jsFS == null)
-                jsFS = new FileInputStream("аpi.txt");
-
-            if (jsFS != null) {
-                int ch;
-                ByteArrayOutputStream sb = new ByteArrayOutputStream();
-                while ((ch = jsFS.read()) != -1)
-                    sb.write(ch);
-                jsStr = sb.toString("UTF8");
-                jsFS.close();
-            }
-        } catch (IOException e) {
-        }
-
-        if (jsStr == "") jsStr = App.AppVersion;
-        JsonObject jsResp = new JsonObject();
-        jsResp.addProperty("Type", "Help");
-        jsResp.addProperty("Val", jsStr);
-        return jsResp.toString();
     }
 }

@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class HandlerApi01 extends HttpHandlerBased {
     protected String doGet(HttpExchange exchange, Map params) {
-        return App.QuMan.getHelp();
+        return App.AppVersion;
     }
 
     // =============================================
