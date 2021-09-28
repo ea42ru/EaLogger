@@ -1,4 +1,5 @@
 package ru.ea42.EaLogger;
+
 import java.io.IOException;
 
 public class Main {
