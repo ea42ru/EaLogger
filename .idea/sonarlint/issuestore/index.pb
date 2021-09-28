@@ -23,5 +23,3 @@ Z
 аpi.txt,2/5/258bf46fa51291c3a8f472a63332a8ee73542700
 ;
 config.json,c/5/c5fd3201494e82cf94e6a681cdc535b306134e1a
-X
-(src/ru/ea42/EaLogger/HandlerMonitor.java,4/5/454cf6579404a136a30a1190f82b98750bd943f0
